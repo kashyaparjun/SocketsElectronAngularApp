@@ -1,3 +1,11 @@
 <h1>
-  {{title}}
+  Notes App
 </h1>
+<input [(ngModel)]="title" placeholder="title..." >
+<input [(ngModel)]="note" placeholder="note..." >
+<button (click)="sendNote()" >Update Note</button>
+<div *ngFor="let note of notes" class="one">
+  <h3>{{note.title}}</h3>
+  <h5>{{note.note}}</h5>
+  <button (click)="delete(note.key)" >delete</button>
+</div>
